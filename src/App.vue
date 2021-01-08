@@ -11,11 +11,6 @@ export default {
   components: {
     Homepage,
   },
-  data() {
-    return {
-      dro: "Hello To The Vuew",
-    };
-  },
 };
 </script>
 
