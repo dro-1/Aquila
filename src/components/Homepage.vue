@@ -34,7 +34,7 @@ export default {
           email: `mailto:${links.email}`,
           instagram: `https://www.instagram.com/${links.instagram}`,
           twitter: `https://www.twitter.com/${links.twitter}`,
-          snapchat: `https://www.snapchat.com/${links.snapchat}`,
+          snapchat: `https://www.snapchat.com/add/${links.snapchat}`,
         };
       })
       .catch(console.log);
