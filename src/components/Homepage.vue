@@ -27,6 +27,7 @@ export default {
 <style lang="scss">
 .container {
   position: relative;
+  min-height: 100vh;
   width: 100%;
   padding-bottom: 3rem;
   background: linear-gradient(

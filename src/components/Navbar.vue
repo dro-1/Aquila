@@ -24,6 +24,7 @@ export default {
 
 <style lang="scss" scoped>
 nav {
+  display: none;
   width: 60%;
   margin: 4rem auto 0;
   ul {
@@ -51,6 +52,11 @@ nav {
         border-radius: 50%;
       }
     }
+  }
+}
+@media screen and (min-width: 950px) {
+  nav {
+    display: block;
   }
 }
 </style>
