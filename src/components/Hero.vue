@@ -8,9 +8,6 @@
 import model from "./../assets/model.png";
 export default {
   name: "Hero",
-  props: {
-    msg: String,
-  },
   data: () => ({
     model,
   }),

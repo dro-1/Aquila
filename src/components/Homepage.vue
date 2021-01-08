@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <Sidebar />
-    <h1>{{ header }}</h1>
+    <Sidebar v-bind:links="links" />
+    <h1 v-bind:header="header">{{ header }}</h1>
     <Hero />
     <Navbar />
   </div>
@@ -11,6 +11,7 @@
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
+import axios from "axios";
 export default {
   name: "Homepage",
   components: {
@@ -19,8 +20,25 @@ export default {
     Sidebar,
   },
   data: () => ({
-    header: "Aquila Aveion",
+    header: "",
+    links: {},
   }),
+  created() {
+    axios
+      .get("https://hirng-x2021.glitch.me/api")
+      .then((resp) => {
+        console.log(resp.data);
+        this.header = resp.data.name;
+        const links = resp.data.social_media;
+        this.links = {
+          email: `mailto:${links.email}`,
+          instagram: `https://www.instagram.com/${links.instagram}`,
+          twitter: `https://www.twitter.com/${links.twitter}`,
+          snapchat: `https://www.snapchat.com/${links.snapchat}`,
+        };
+      })
+      .catch(console.log);
+  },
 };
 </script>
 

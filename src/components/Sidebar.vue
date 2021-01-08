@@ -2,16 +2,16 @@
   <nav>
     <ul>
       <li>
-        <a><img :src="instagram"/></a>
+        <a :href="links.instagram"><img :src="instagram"/></a>
       </li>
       <li>
-        <a><img :src="twitter"/></a>
+        <a :href="links.twitter"><img :src="twitter"/></a>
       </li>
       <li>
-        <a><img :src="snapchat"/></a>
+        <a :href="links.snapchat"><img :src="snapchat"/></a>
       </li>
       <li>
-        <a><img :src="mail"/></a>
+        <a :href="links.email"><img :src="mail"/></a>
       </li>
     </ul>
   </nav>
@@ -24,6 +24,9 @@ import instagram from "./../assets/instagram.svg";
 import snapchat from "./../assets/snapchat.svg";
 export default {
   name: "Sidebar",
+  props: {
+    links: Object,
+  },
   data() {
     return {
       twitter,
